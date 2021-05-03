@@ -15,7 +15,8 @@ services:
         restart: unless-stopped
         networks:
             - inside
-        depends_on: nginx
+        depends_on: 
+            - nginx
         # ports:
         #     - 4000:80
         #     - 3000-3100:3000-3100
@@ -31,7 +32,8 @@ services:
         restart: unless-stopped
         networks:
             - inside
-        depends_on: nginx
+        depends_on: 
+            - nginx
         # ports:
         #     - 3838:3838
     nginx:

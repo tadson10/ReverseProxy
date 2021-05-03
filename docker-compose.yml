@@ -35,7 +35,8 @@ services:
         # ports:
         #     - 3838:3838
     nginx:
-        context: nginx
+        build:
+            context: nginx
     # image: nginx:stable
         container_name: nginx
         restart: unless-stopped

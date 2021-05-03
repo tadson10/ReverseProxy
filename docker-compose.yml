@@ -43,6 +43,8 @@ services:
         networks:
             - inside
             - outside
+        volumes: 
+            - ./nginx.conf:/etc/nginx/nginx.conf
 
 volumes:
   mysqlVolume: {}

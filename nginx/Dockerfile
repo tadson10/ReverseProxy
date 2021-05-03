@@ -1,4 +1,4 @@
 FROM nginx:stable
-RUN apt update
-RUN rm /etc/nginx/nginx.conf
-COPY nginx.conf /etc/nginx/nginx.conf
+# RUN apt update
+# RUN rm /etc/nginx/nginx.conf
+# COPY nginx.conf /etc/nginx/nginx.conf

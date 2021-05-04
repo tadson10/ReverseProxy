@@ -47,7 +47,7 @@ services:
         #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     myapp:
         image: tutum/hello-world
-        expose: 
+        ports:
             - 3000:80
         
 volumes:

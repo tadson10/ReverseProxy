@@ -38,7 +38,7 @@ services:
         # restart: unless-stopped
         ports:
             # - 4000:80
-            - 3000-3100:3000-3100
+            - 2000-3500:2000-3500
             # - 3838:81
             - 4000:4000
         # networks:

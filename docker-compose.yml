@@ -47,7 +47,10 @@ services:
         # volumes: 
         #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     myapp:
-        image: king12ho/myapp
+        image: tutum/hello-world
+        expose: 
+            - 80
+        
 # volumes:
 #   mysqlVolume: {}
 

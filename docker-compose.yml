@@ -31,16 +31,16 @@ services:
     #         - inside
     #     depends_on: 
     #         - nginx
-    nginx:
-        build:
-            context: nginx
-        container_name: nginx
-        # restart: unless-stopped
-        ports:
-            # - 4000:80
-            - 2900-3200:2900-3200
-            # - 3838:81
-            - 4000:4000
+    # nginx:
+    #     build:
+    #         context: nginx
+    #     container_name: nginx
+    #     # restart: unless-stopped
+    #     ports:
+    #         # - 4000:80
+    #         - 2900-3200:2900-3200
+    #         # - 3838:81
+    #         - 4000:4000
         # networks:
         #     - inside
         #     - outside
@@ -48,8 +48,9 @@ services:
         #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     myapp:
         image: tutum/hello-world
-        expose: 
-            - 80
+        # expose: 
+        ports: 
+            - 3000:80
         
 # volumes:
 #   mysqlVolume: {}

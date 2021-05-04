@@ -1,24 +1,24 @@
 version: '3.3'
 
 services:
-    # jobe:
-    #     build:
-    #         context: jobe
-    #         args:
-    #             - ROOTPASS=$ROOTPASS
-    #             - TZ=$TZ
-    #     env_file: .env
-    #     environment: 
-    #         - MYSQLUSER=$MYSQLUSER
-    #         - MYSQLPASS=$MYSQLPASS
-    #     container_name: jobe
-    #     restart: unless-stopped
-    #     networks:
-    #         - inside
-    #     depends_on: 
-    #         - nginx
-    #     volumes:
-    #         - mysqlVolume:/var/lib/mysql
+    jobe:
+        build:
+            context: jobe
+            args:
+                - ROOTPASS=$ROOTPASS
+                - TZ=$TZ
+        env_file: .env
+        environment: 
+            - MYSQLUSER=$MYSQLUSER
+            - MYSQLPASS=$MYSQLPASS
+        container_name: jobe
+        restart: unless-stopped
+        networks:
+            - inside
+        depends_on: 
+            - nginx
+        volumes:
+            - mysqlVolume:/var/lib/mysql
     # shiny:
     #     build:
     #         context: learnr
@@ -31,31 +31,29 @@ services:
     #         - inside
     #     depends_on: 
     #         - nginx
-    # nginx:
-    #     build:
-    #         context: nginx
-    #     container_name: nginx
-    #     # restart: unless-stopped
-    #     ports:
-    #         # - 4000:80
-    #         - 2900-3200:2900-3200
-    #         # - 3838:81
-    #         - 4000:4000
-        # networks:
-        #     - inside
-        #     - outside
+    nginx:
+        build:
+            context: nginx
+        container_name: nginx
+        # restart: unless-stopped
+        ports:
+            - 3000-3100:3000-3100
+            - 3838:3838
+            - 4000:4000
+        networks:
+            - inside
+            - outside
         # volumes: 
         #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     myapp:
         image: tutum/hello-world
-        # expose: 
-        ports: 
+        expose: 
             - 3000:80
         
-# volumes:
-#   mysqlVolume: {}
+volumes:
+  mysqlVolume: {}
 
-# networks: 
-#     inside: 
-#         internal: true
-#     outside: {}
+networks: 
+    inside: 
+        internal: true
+    outside: {}

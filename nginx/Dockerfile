@@ -4,4 +4,4 @@ COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 4000
 # EXPOSE 3000
 # EXPOSE 3100
-EXPOSE 2900-3200
+EXPOSE 3000-3100

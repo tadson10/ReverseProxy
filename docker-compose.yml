@@ -17,18 +17,18 @@ services:
             - inside
         volumes:
             - mysqlVolume:/var/lib/mysql
-    # shiny:
-    #     build:
-    #         context: learnr
-    #         args:
-    #             - JOBE_IP=$JOBE_IP
-    #     env_file: .env
-    #     container_name: shiny
-    #     restart: unless-stopped
-    #     networks:
-    #         - inside
-    #     depends_on: 
-    #         - nginx
+    shiny:
+        build:
+            context: learnr
+            args:
+                - JOBE_IP=$JOBE_IP
+        env_file: .env
+        container_name: shiny
+        restart: unless-stopped
+        networks:
+            - inside
+        # depends_on: 
+        #     - nginx
     nginx:
         build:
             context: nginx
@@ -43,6 +43,7 @@ services:
             - outside
         depends_on: 
                 - jobe
+                - shiny
         # volumes: 
         #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     # myapp:

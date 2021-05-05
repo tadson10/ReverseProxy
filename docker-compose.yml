@@ -15,8 +15,6 @@ services:
         restart: unless-stopped
         networks:
             - inside
-        depends_on: 
-            - nginx
         volumes:
             - mysqlVolume:/var/lib/mysql
     # shiny:
@@ -43,6 +41,8 @@ services:
         networks:
             - inside
             - outside
+        depends_on: 
+                - jobe
         # volumes: 
         #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     # myapp:

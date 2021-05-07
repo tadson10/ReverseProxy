@@ -21,7 +21,7 @@ services:
         build:
             context: learnr
             args:
-                - JOBE_IP=$JOBE_IP
+                - JOBEIP=$JOBEIP
         env_file: .env
         container_name: shiny
         restart: unless-stopped

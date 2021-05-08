@@ -64,9 +64,9 @@ RUN ln -snf /usr/share/zoneinfo/"$TZ" /etc/localtime && \
   systemd \
   npm \
   unzip && \
-  npm install -g express-generator && \
   npm install -g express && \
   npm install -g body-parser && \
+  npm install -g path && \
   systemctl enable mysql && \
   python3 -m pip install pylint && \
   pylint --reports=no --score=n --generate-rcfile > /etc/pylintrc && \

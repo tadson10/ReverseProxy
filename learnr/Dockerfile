@@ -25,5 +25,3 @@ RUN R -e "install.packages(c('devtools', 'unix'), dependencies = TRUE)" && \
     sed -i "s/#JOBE_SERVER_IP#/$JOBEIP/g" /srv/shiny-server/PrimerIzboljsav/PrimerIzboljsav.Rmd
 
 EXPOSE 3838
-
-# CMD ["/usr/bin/shiny-server.sh"]

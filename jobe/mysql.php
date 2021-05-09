@@ -32,11 +32,20 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS `keys` (
        PRIMARY KEY (`id`)
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
+$mysqli->query("DELIMITER @@
+                CREATE TRIGGER `before_keys_insert` 
+                BEFORE INSERT ON jobe.keys
+                  FOR EACH ROW 
+                    IF (NEW.user_id IS NULL) THEN 
+                      SET NEW.user_id = 123456; 
+                    END IF; @@
+                DELIMITER ;");
+
 // INSERT sample api key for testing
 $count = $mysqli->query("SELECT COUNT(1) AS NUM FROM jobe.keys WHERE keys.key = 'dcc9a835-9750-4725-af5b-2c839908f71'");
 
 if ($count->fetch_assoc()["NUM"] == 0) {
-  $sql = "INSERT INTO jobe.keys (`user_id`, `key`, `level`, `date_created`) VALUES (123456, 'dcc9a835-9750-4725-af5b-2c839908f71', 1, UNIX_TIMESTAMP())";
+  $sql = "INSERT INTO jobe.keys (`key`, `level`, `date_created`) VALUES ('dcc9a835-9750-4725-af5b-2c839908f71', 1, UNIX_TIMESTAMP())";
   $insert = $mysqli->query($sql);
 
   if ($insert === TRUE) {

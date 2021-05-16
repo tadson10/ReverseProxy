@@ -70,4 +70,14 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS `logs` (
        PRIMARY KEY (`id`)
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
+// CREATE "limits" table
+$mysqli->query("CREATE TABLE `limits` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `uri` VARCHAR(255) NOT NULL,
+  `count` INT(10) NOT NULL,
+  `hour_started` INT(11) NOT NULL,
+  `api_key` VARCHAR(40) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8");
+
 $mysqli->close();

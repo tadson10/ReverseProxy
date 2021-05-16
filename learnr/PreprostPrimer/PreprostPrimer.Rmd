@@ -20,21 +20,24 @@ knitr::opts_chunk$set(echo = FALSE)
 x <- 10
 quiz(
   caption="Kviz",
-  question("Kaj izmed nastetega je R paket?",
+  question("Kaj izmed nastetega ni povezano s programskim jezikom JavaScript?",
     answer("Learnr", correct = TRUE),
-    answer("Express"),
+    answer("Express", message = "Express je JavaScript knjižnica."),
     answer("Shiny", correct = TRUE),
-    answer("Angular", message = "Na tem mestu lahko pripravimo sporocilo, ki se pojavi ob nepravilni izbiri odgovora."),
-    incorrect = "Na tem mestu lahko pripravimo sporocilo, ki se prikaze ob nepravilnem odogovoru."
+    answer("Angular"),
+    allow_retry = TRUE,
+    incorrect = "Odgovor ni pravilen.",
+    correct = "Odgovor je pravilen."
   ),
   question(sprintf("Če je $x = %s$, katera trditev drzi?", x),
-    answer(sprintf("$\\sqrt{x} = %d$", x^2), correct = TRUE, message = "Na tem mestu lahko pripravimo sporocilo, ki se pojavi ob pravilni izbiri odgovora."),
+    answer(sprintf("$\\sqrt{x ^ 2} = 10$"), correct = TRUE, message = "Pravilen odgovor."),
     answer(sprintf("$x ^ 2 = %d$", x * 2)),
     answer("$\\sin x = 1$"),
     allow_retry = TRUE,
-    random_answer_order = TRUE
+    random_answer_order = TRUE,
+    type = "single"
   )
-)  
+)
 ```
 
 ### Videoposnetek
@@ -55,16 +58,12 @@ knitr::include_graphics("images/image.jpg")
 
 Izvorno kodo spremeni, tako da vrne prvih 5 vrstic zbirke podatkov *mtcars*:
 
-```{r cars, exercise=TRUE, exercise.eval=TRUE}
+```{r cars, exercise=TRUE, exercise.eval=TRUE, exercise.cap="Code", exercise.lines=3, exercise.timelimit=2}
 mtcars
 ```
 
 ```{r cars-hint}
 head(mtcars)
-```
-
-```{r cars-solution, exercise.reveal_solution = FALSE}
-head(mtcars, n = 5)
 ```
 
 ### Uporaba *context = "data"* in interaktivnih Shiny komponent

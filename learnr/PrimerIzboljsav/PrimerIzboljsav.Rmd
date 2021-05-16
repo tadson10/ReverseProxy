@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Napišite JavaScript funkcijo za izračun n-tega Fibonaccijevega števila:
 
-```{js simpleJS, exercise=TRUE,  exercise.timelimit = 2, exercise.eval=TRUE, exercise.cap = "app.js", exercise.id="firstJSExercise", exercise.type = "js", exercise.libraryPath = "/home/libraries"} 
+```{js simpleJS, exercise=TRUE,  exercise.timelimit = 2, exercise.cap = "app.js", exercise.id="firstJSExercise", exercise.type = "js", exercise.libraryPath = "/home/libraries"} 
    
 ```       
  
@@ -28,12 +28,11 @@ Napišite JavaScript funkcijo za izračun n-tega Fibonaccijevega števila:
 
 Napišite kodo za zagon preprostega Express spletnega strežnika, ki bo postregel 2 strani skupaj s stilsko datoteko in dodatno JavaScript datoteko:
 
-```{js express1,exercise=TRUE, exercise.id = "expressExercise", exercise.timelimit = 10, exercise.type = "js", exercise.lines = 20, exercise.cap = "app.js", exercise.eval = FALSE, exercise.serverIP = "#JOBE_SERVER_IP#"}  
+```{js express1,exercise=TRUE, exercise.id = "expressExercise", exercise.timelimit = 10, exercise.type = "js", exercise.lines = 20, exercise.cap = "app.js", exercise.serverIP = "#JOBE_SERVER_IP#"}  
 const express = require('express'); 
 const app = express(); 
-
 ```  
-
+ 
 ```{js express2,exercise=TRUE, exercise.id = "expressExercise", exercise.type = "js", exercise.lines = 20, exercise.cap = "index.html", exercise.serverIP = "#JOBE_SERVER_IP#"} 
 
 ```

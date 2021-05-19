@@ -19,7 +19,7 @@ services:
             - mysqlVolume:/var/lib/mysql
     shiny:
         build:
-            context: learnr
+            context: shiny
             args:
                 - JOBEIP=$JOBEIP
         env_file: .env

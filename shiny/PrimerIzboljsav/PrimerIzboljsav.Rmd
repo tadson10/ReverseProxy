@@ -31,10 +31,23 @@ Napišite kodo za zagon preprostega Express spletnega strežnika, ki bo postrege
 ```{js express1,exercise=TRUE, exercise.id = "expressExercise", exercise.timelimit = 10, exercise.type = "js", exercise.lines = 20, exercise.cap = "app.js", exercise.serverIP = "#JOBE_SERVER_IP#"}  
 const express = require('express'); 
 const app = express(); 
+const bodyParser = require('body-parser'); 
+var path = require('path');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+app.listen(process.env.PORT, () => console.log(`This app is listening on port `  + process.env.PORT));
 ```  
  
 ```{js express2,exercise=TRUE, exercise.id = "expressExercise", exercise.type = "js", exercise.lines = 20, exercise.cap = "index.html", exercise.serverIP = "#JOBE_SERVER_IP#"} 
-
+<html>
+    <h1>Hello World!</h1>
+</html>
 ```
 
 ```{js express3, exercise=TRUE, exercise.id = "expressExercise", exercise.type = "js", exercise.lines = 20, exercise.cap = "styles.css", exercise.serverIP = "#JOBE_SERVER_IP#"} 

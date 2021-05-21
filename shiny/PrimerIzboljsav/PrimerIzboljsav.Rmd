@@ -44,7 +44,8 @@ app.get('/', (req, res) => {
 app.listen(process.env.PORT, () => console.log(`This app is listening on port `  + process.env.PORT));
 ```  
  
-```{js express2,exercise=TRUE, exercise.id = "expressExercise", exercise.type = "js", exercise.lines = 20, exercise.cap = "index.html", exercise.serverIP = "#JOBE_SERVER_IP#"} 
+```{js express2,exercise=TRUE, exercise.id = "expressExercise", exercise.type = "js", exercise.lines = 20, exercise.cap = "index.html", exercise.serverIP = "#JOBE_SERVER_IP#"}
+<!DOCTYPE html> 
 <html>
     <h1>Hello World!</h1>
 </html>

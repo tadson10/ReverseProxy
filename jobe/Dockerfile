@@ -84,7 +84,7 @@ RUN ln -snf /usr/share/zoneinfo/"$TZ" /etc/localtime && \
   echo "Jobe" > /var/www/html/index.html && \
   git clone https://github.com/tadson10/jobe /var/www/html/jobe && \
   sudo service apache2 start && \
-  cd /var/www/html/jobe && sudo ./install && composer require zircote/swagger-php && \
+  cd /var/www/html/jobe && sudo ./install && composer update && composer install && \
   chown -R www-data:www-data /var/www/html && \
   chmod +x /start.sh && \
   apt-get -y autoremove --purge && \

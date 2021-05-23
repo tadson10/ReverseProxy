@@ -5,7 +5,7 @@ ARG JOBEIP
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 
 COPY PrimerIzboljsav /srv/shiny-server/PrimerIzboljsav
-COPY PreprostPrimer /srv/shiny-server/PreprostPrimer
+COPY OsnovnoDelovanje /srv/shiny-server/OsnovnoDelovanje
 
 COPY libraries /home/libraries
 

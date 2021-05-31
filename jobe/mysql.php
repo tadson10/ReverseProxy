@@ -33,7 +33,7 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS `keys` (
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
 $mysqli->query("DELIMITER @@
-                DROP TRIGGER before_keys_insert;
+                DROP TRIGGER IF EXISTS before_keys_insert;
                 CREATE TRIGGER `before_keys_insert` 
                 BEFORE INSERT ON jobe.keys
                 FOR EACH ROW 

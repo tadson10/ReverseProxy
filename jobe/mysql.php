@@ -32,7 +32,7 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS `keys` (
        PRIMARY KEY (`id`)
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
-$mysqli->query("DELIMITER @@
+$result = $mysqli->query("DELIMITER @@
                 DROP TRIGGER IF EXISTS before_keys_insert;
                 CREATE TRIGGER `before_keys_insert` 
                 BEFORE INSERT ON jobe.keys
@@ -45,6 +45,12 @@ $mysqli->query("DELIMITER @@
                     SET NEW.date_created = UNIX_TIMESTAMP();
                 END; @@
                     DELIMITER ;");
+
+if ($result === TRUE) {
+  echo "Trigger created!";
+} else {
+  echo "Error creating trigger: " . $sql . "<br>" . $mysqli->error . ` \n`;
+}
 
 // INSERT sample api key for testing
 $sql = "DELETE FROM jobe.keys WHERE keys.key = 'dcc9a835-9750-4725-af5b-2c839908f71'";

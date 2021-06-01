@@ -32,8 +32,15 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS `keys` (
        PRIMARY KEY (`id`)
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
-$result = $mysqli->query("DROP TRIGGER IF EXISTS before_keys_insert;
-                          CREATE TRIGGER before_keys_insert BEFORE INSERT ON jobe.keys
+$result = $mysqli->query("DROP TRIGGER IF EXISTS before_keys_insert");
+
+if ($result === TRUE) {
+  echo "Trigger deleted! \r\n";
+} else {
+  echo "Error deleting trigger: " . $mysqli->error . ` \n`;
+}
+
+$result = $mysqli->query("CREATE TRIGGER before_keys_insert BEFORE INSERT ON jobe.keys
                             FOR EACH ROW
                             BEGIN
                               IF (NEW.user_id IS NULL) THEN 

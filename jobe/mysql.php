@@ -33,8 +33,6 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS `keys` (
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
 $result = $mysqli->query("DROP TRIGGER IF EXISTS before_keys_insert;
-                          delimiter |
-                          
                           CREATE TRIGGER before_keys_insert BEFORE INSERT ON jobe.keys
                             FOR EACH ROW
                             BEGIN
@@ -43,15 +41,12 @@ $result = $mysqli->query("DROP TRIGGER IF EXISTS before_keys_insert;
                               END IF; 
                               SET NEW.level = 1;
                               SET NEW.date_created = UNIX_TIMESTAMP();
-                            END;
-                          |
-
-                          delimiter ;");
+                            END;");
 
 if ($result === TRUE) {
-  echo "Trigger created!";
+  echo "Trigger created! \r\n";
 } else {
-  echo "Error creating trigger: " . $mysqli->error . ` \n`;
+  echo "Error creating trigger: " . $mysqli->error . ` \r\n`;
 }
 
 // INSERT sample api key for testing
@@ -62,9 +57,9 @@ $sql = "INSERT INTO jobe.keys (`key`) VALUES ('dcc9a835-9750-4725-af5b-2c839908f
 $insert = $mysqli->query($sql);
 
 if ($insert === TRUE) {
-  echo "Sample API key inserted";
+  echo "Sample API key inserted! \r\n";
 } else {
-  echo "Error: " . $sql . "<br>" . $mysqli->error . ` \n`;
+  echo "Error: " . $sql . "<br>" . $mysqli->error . ` \r\n`;
 }
 
 // CREATE "logs" table

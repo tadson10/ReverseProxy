@@ -32,19 +32,21 @@ $mysqli->query("CREATE TABLE IF NOT EXISTS `keys` (
        PRIMARY KEY (`id`)
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
-$result = $mysqli->query("DELIMITER @@
-                DROP TRIGGER IF EXISTS before_keys_insert;
-                CREATE TRIGGER `before_keys_insert` 
-                BEFORE INSERT ON jobe.keys
-                FOR EACH ROW 
-                BEGIN
-                    IF (NEW.user_id IS NULL) THEN 
-                      SET NEW.user_id = 123456; 
-                    END IF; 
-                    SET NEW.level = 1;
-                    SET NEW.date_created = UNIX_TIMESTAMP();
-                END; @@
-                    DELIMITER ;");
+$result = $mysqli->query("DROP TRIGGER IF EXISTS before_keys_insert;
+                          delimiter |
+                          
+                          CREATE TRIGGER before_keys_insert BEFORE INSERT ON jobe.keys
+                            FOR EACH ROW
+                            BEGIN
+                              IF (NEW.user_id IS NULL) THEN 
+                                SET NEW.user_id = 123456; 
+                              END IF; 
+                              SET NEW.level = 1;
+                              SET NEW.date_created = UNIX_TIMESTAMP();
+                            END;
+                          |
+
+                          delimiter ;");
 
 if ($result === TRUE) {
   echo "Trigger created!";

@@ -51,7 +51,7 @@ $result = $mysqli->query("DROP TRIGGER IF EXISTS before_keys_insert;
 if ($result === TRUE) {
   echo "Trigger created!";
 } else {
-  echo "Error creating trigger: " . $sql . "<br>" . $mysqli->error . ` \n`;
+  echo "Error creating trigger: " . $mysqli->error . ` \n`;
 }
 
 // INSERT sample api key for testing

@@ -38,6 +38,6 @@ profile r-user {
 	/usr/share/** mr,
 	/usr/share/ca-certificates/** r,
 	/usr/lib/rstudio/bin/pandoc/* rix,
-    /home/libraries/*.js r,
+  /home/libraries/*.js r,
 	/srv/shiny-server/** r,
 }

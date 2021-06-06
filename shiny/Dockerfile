@@ -22,6 +22,7 @@ RUN R -e "install.packages(c('devtools', 'unix'), dependencies = TRUE)" && \
     chmod +x /usr/bin/shiny-server.sh && \
     # chown shiny:shiny -R /srv/shiny-server/ && \
     # chmod 755 -R /srv/shiny-server/ && \
-    sed -i "s/#JOBE_SERVER_IP#/$JOBEIP/g" /srv/shiny-server/PrimerIzboljsav/PrimerIzboljsav.Rmd
+    sed -i "s/#JOBE_SERVER_IP#/$JOBEIP/g" /srv/shiny-server/PrimerIzboljsav/PrimerIzboljsav.Rmd && \
+    sed -i "s/#JOBE_SERVER_IP#/$JOBEIP/g" /srv/shiny-server/PrimerIzboljsav/PrimerIzboljsav.html
 
 EXPOSE 3838

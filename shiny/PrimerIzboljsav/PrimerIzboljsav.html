@@ -138,7 +138,7 @@
             <h3>Naloga z uporabo Jobe strežnika</h3>
             <p><em>Pred vami je preprosta naloga z nekaj vnaprej pripravljene kode. Za določitev številke vrat, na katerih boste pognali preprost spletni strežnik, uporabite “process.env.PORT”. Statične datoteke se na Jobe strežniku nahajajo v poddirektoriju “public”.</em></p>
             <p>Napišite kodo za zagon preprostega Express spletnega strežnika, ki bo postregel 2 strani skupaj s stilsko datoteko in dodatno JavaScript datoteko:</p>
-            <div class="tutorial-exercise" data-label="express1" data-caption="app.js" data-completion="1" data-diagnostics="1" data-startover="1" data-serverip="52.236.167.79:4000" data-type="js" data-id="expressExercise" data-lines="20">
+            <div class="tutorial-exercise" data-label="express1" data-caption="app.js" data-completion="1" data-diagnostics="1" data-startover="1" data-serverip="#JOBE_SERVER_IP#" data-type="js" data-id="expressExercise" data-lines="20">
               <pre class="text"><code>const express = require(&#39;express&#39;);
 const app = express();
 const bodyParser = require(&#39;body-parser&#39;);
@@ -152,24 +152,24 @@ app.get(&#39;/&#39;, (req, res) =&gt; {
 });
 
 app.listen(process.env.PORT, () =&gt; console.log(`This app is listening on port `  + process.env.PORT));</code></pre>
-              <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":10,"exercise.checker":"NULL","exercise.type":"js","exercise.serverIP":"52.236.167.79:4000","exercise.caption":"app.js","exercise.libraryPath":""}</script>
+              <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":10,"exercise.checker":"NULL","exercise.type":"js","exercise.serverIP":"#JOBE_SERVER_IP#","exercise.caption":"app.js","exercise.libraryPath":""}</script>
             </div>
-            <div class="tutorial-exercise" data-label="express2" data-caption="index.html" data-completion="1" data-diagnostics="1" data-startover="1" data-serverip="52.236.167.79:4000" data-type="js" data-id="expressExercise" data-lines="20">
+            <div class="tutorial-exercise" data-label="express2" data-caption="index.html" data-completion="1" data-diagnostics="1" data-startover="1" data-serverip="#JOBE_SERVER_IP#" data-type="js" data-id="expressExercise" data-lines="20">
               <pre class="text"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;h1&gt;Hello World!&lt;/h1&gt;
 &lt;/html&gt;</code></pre>
-              <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL","exercise.type":"js","exercise.serverIP":"52.236.167.79:4000","exercise.caption":"index.html","exercise.libraryPath":""}</script>
+              <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL","exercise.type":"js","exercise.serverIP":"#JOBE_SERVER_IP#","exercise.caption":"index.html","exercise.libraryPath":""}</script>
             </div>
-            <div class="tutorial-exercise" data-label="express3" data-caption="styles.css" data-completion="1" data-diagnostics="1" data-startover="1" data-serverip="52.236.167.79:4000" data-type="js" data-id="expressExercise" data-lines="20">
+            <div class="tutorial-exercise" data-label="express3" data-caption="styles.css" data-completion="1" data-diagnostics="1" data-startover="1" data-serverip="#JOBE_SERVER_IP#" data-type="js" data-id="expressExercise" data-lines="20">
               <pre class="text"><code> </code></pre>
-              <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL","exercise.type":"js","exercise.serverIP":"52.236.167.79:4000","exercise.caption":"styles.css","exercise.libraryPath":""}</script>
+              <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.checker":"NULL","exercise.type":"js","exercise.serverIP":"#JOBE_SERVER_IP#","exercise.caption":"styles.css","exercise.libraryPath":""}</script>
             </div>
-            <div class="tutorial-exercise" data-label="express4" data-caption="script.js" data-completion="1" data-diagnostics="1" data-startover="1" data-serverip="52.236.167.79:4000" data-type="js" data-id="expressExercise" data-lines="20">
+            <div class="tutorial-exercise" data-label="express4" data-caption="script.js" data-completion="1" data-diagnostics="1" data-startover="1" data-serverip="#JOBE_SERVER_IP#" data-type="js" data-id="expressExercise" data-lines="20">
               <pre class="text"><code>function preprostaFunkcija() {
     console.log(&quot;Klic preprostaFunkcija()&quot;);
 }       </code></pre>
-              <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":10,"exercise.checker":"NULL","exercise.type":"js","exercise.serverIP":"52.236.167.79:4000","exercise.caption":"script.js","exercise.libraryPath":""}</script>
+              <script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":10,"exercise.checker":"NULL","exercise.type":"js","exercise.serverIP":"#JOBE_SERVER_IP#","exercise.caption":"script.js","exercise.libraryPath":""}</script>
             </div>
 
             <script type="application/shiny-prerendered" data-context="server-start">
